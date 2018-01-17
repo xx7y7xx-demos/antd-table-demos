@@ -24,10 +24,8 @@ const columns = [{
       value: 'Black',
     }],
   }],
-  // specify the condition of filtering result
-  // here is that finding the name started with `value`
-  onFilter: (value, record) => record.name.indexOf(value) === 0,
-  sorter: (a, b) => a.name.length - b.name.length,
+  defaultSortOrder: 'ascend',
+  sorter: (a, b) => { return a.name.localeCompare(b.name)},
 }, {
   title: 'Age',
   dataIndex: 'age',
